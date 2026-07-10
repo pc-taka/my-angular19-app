@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+        <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/page1">Page 1</a></li>
+            <li><a routerLink="/page2">Page 2</a></li>
+        @if (isAuthenticated() && !isTokenExpired()) {   
+            <li><a routerLink="/dashboard">Dashboard</a></li>
+            <li><a routerLink="/admin">Admin</a></li>
+            <li><a routerLink="/logout" (click)="logout()">Logout</a></li>
+        } @else {
+            <li><a routerLink="/login">Login</a></li>
+        }   
+    </ul>
+</nav>

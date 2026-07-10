@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" autocomplete="email"
+     placeholder="Enter your email" />
+     @if (loginForm.controls.email.errors?.['required']) {
+       <small>Email is required</small>
+     }
+     @if (loginForm.controls.email.errors?.['email']) {
+       <small>Email is invalid</small>
+     }
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password"
+     autocomplete="current-password" placeholder="Enter your password" />
+     @if (loginForm.controls.password.errors?.['required']) {
+       <small>Password is required</small>
+     }
+     @if (loginForm.controls.password.errors?.['minlength']) {
+       <small>Password must be at least 8 characters long</small>
+     }
+  </div>
+  <button type="submit">Login</button>
+</form>

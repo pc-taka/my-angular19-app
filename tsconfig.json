@@ -3,6 +3,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@app/models/loginForm.model": ["./src/app/shared/models/forms/loginForm.model.ts"],
+      "@app/models/loginAPI.model": ["./src/app/shared/models/api/login.model.ts"],
+      "@app/http/auth.service": ["./src/app/core/http/auth/auth.service.ts"],
+      "@app/auth.guard": ["./src/app/core/gaurds/auth.guard.ts"],
+      "@app/role.guard": ["./src/app/core/gaurds/role.guard.ts"],
+      "@app/role.model": ["./src/app/shared/models/auth/role.model.ts"]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
